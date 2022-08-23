@@ -220,10 +220,12 @@
 
 ![image](https://user-images.githubusercontent.com/100820039/186049294-c1a08978-b005-4ef4-8e1a-7de5dd1c9972.png)
 
-메뉴 이미지 수정시 수정 전의 이미지가 서버에서 삭제 될 수 있도록 구현했습니다.
+메뉴 이미지 수정시 수정 전의 이미지가 남아있는걸 확인하여 용량 확보를 위해 서버에서 삭제 될 수 있도록 구현했습니다.
+
 사용자가 이미지 수정을 하지 않거나, 이미지 값이 default값일 경우 수정을 하더라도 이미지를 삭제하지 않도록 조건을 주었습니다.
 
-구현 코드
+
+>구현 코드
 ```Java
 	// 개별 메뉴 수정
 	public boolean updateMenu(FoodsCommand foods, FoodsCommand sessionFoodId) {
