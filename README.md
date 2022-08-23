@@ -21,16 +21,16 @@
 
   * 카테고리
     * [카테고리 추가](#카테고리-추가)
-    * 추가
-    * 조회
-    * 삭제
+    * 카테고리 조회
+    * [카테고리 삭제](#카테고리-삭제)
+    * [카테고리 유효성 검사](#카테고리-유효성-검사)
 
   * 메뉴
   
-    * 추가 / 추가시 이미지 업로드 기능
-    * 조회
-    * 수정 / 이미지 수정시 전에 올렸던 이미지 경로에서 삭제
-    * 삭제 / 메뉴 다중 삭제 가능
+    * [메뉴추가](#메뉴-추가) / 추가시 이미지 업로드 기능
+    * [메뉴조회](#메뉴-조회)
+    * [메뉴수정](#메뉴-수정) / 이미지 수정시 전에 올렸던 이미지 경로에서 삭제
+    * [메뉴삭제](#메뉴-삭제) / 메뉴 다중 삭제 가능
   
  * 주문
  
@@ -63,7 +63,7 @@
 ![image](https://user-images.githubusercontent.com/100820039/186043122-c8f2af5c-a1dd-477d-b963-8fde1f8e6194.png)
 ![image](https://user-images.githubusercontent.com/100820039/186043169-2b0b3c38-72a9-4df6-867e-5bb4ee6bf21f.png)
 
-카테고리 삭제
+# 카테고리 삭제
 
 ![image](https://user-images.githubusercontent.com/100820039/186043268-632b38f5-28a5-4db5-abbe-c37252f705c4.png)
 ![image](https://user-images.githubusercontent.com/100820039/186043315-879b4f0b-f059-4ed0-9c28-a70f6eed6007.png)
@@ -92,13 +92,14 @@
   ![image](https://user-images.githubusercontent.com/100820039/186044588-21618508-5d38-40e6-bd50-1da1bdc9f64e.png)
 
 
+
+ # 메뉴 추가
+ 
+ 
 * 메뉴 추가 페이지 화면
 
 
 ![image](https://user-images.githubusercontent.com/100820039/186043830-4947980c-7655-4381-bfe0-1e1d116bb1bb.png)
-
-
- # 메뉴 추가
  
  메뉴 추가시 현재 추가된 카테고리 목록을 select box 로 사용자에게 보여주어 카테고리 선택을 편하게 하도록 구현하였습니다.
  
@@ -240,7 +241,15 @@
 ```
 
 이전 이미지가 삭제된 모습
+
 ![image](https://user-images.githubusercontent.com/100820039/186050222-86c339bb-a5eb-4583-a575-201a8ea38775.png)
+
+# 메뉴 삭제
+
+메뉴 조회 화면에서 체크박스를 체크 후 삭제 버튼을 누르면 메뉴가 삭제되게 구현했습니다.
+
+![image](https://user-images.githubusercontent.com/100820039/186056027-308d403d-6351-4e55-974a-68bca43e58c6.png)
+
 
 
 
