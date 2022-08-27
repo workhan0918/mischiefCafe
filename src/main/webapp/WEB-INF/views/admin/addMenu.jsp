@@ -29,14 +29,24 @@
       </form>
       <h1 style="margin: 15px 0 15px 0">현재 메뉴 목록</h1>
       <form action="addMenu" method="get" name="getMenu" class="addCategoryForm">
+      		<c:if test="${categoryName == null }">
       		<span style="font-size: 32px; position: realative; top: -3px">메뉴 카테고리  : </span><select style="height: 40px; font-size: 30px;" name="cateName" onchange="select()">
       					<option value="unknown" selected disabled>카테고리 선택</option>
       					<c:forEach var = "item" items="${cateList }">
       						<option value="${item.cateName }">${item.cateName }</option>
       					</c:forEach>
       					</select>
+      		</c:if>
+      		<c:if test="${categoryName != null }">
+      		<span style="font-size: 32px; position: realative; top: -3px">메뉴 카테고리  : </span><select style="height: 40px; font-size: 30px;" name="cateName" onchange="select()">
+      					<option value="unknown" disabled>카테고리 선택</option>
+      					<option selected value=${categoryName }>${categoryName }</option>
+      					<c:forEach var = "item" items="${cateList }" >
+      						<option value="${item.cateName }">${item.cateName }</option>
+      					</c:forEach>
+      					</select>
+      		</c:if>
       </form>
-
       <form action="deleteMenu" method="post">
       <table>
       <c:if test="${foodList != '[]' }">
@@ -85,7 +95,6 @@
 			alert("이미지 파일은 (jpg, png, jpeg) 형식만 등록 가능합니다.");
 			document.getElementById('preview').src = "";
 			document.getElementById('img').value = null;
-			return false;
 		}
 		  if (input.files && input.files[0]) {
 		    var reader = new FileReader();

@@ -23,8 +23,10 @@ public class DeleteCategoryController {
 
 		CafeService service = new CafeServiceImpl();
 		
+		if(!service.deleteCategory(cateName)) {
+			Alert.alertAndMovePage(response, "선택하신 카테고리의 해당되는 메뉴를 먼저 삭제해주세요!", "addCategory");
+		}
 		service.deleteCategory(cateName);
-		
 		Alert.alertAndMovePage(response, "카테고리를 삭제 했습니다.", "addCategory");
 		
 		return "redirect:/addCategory";

@@ -31,12 +31,19 @@ public class AddMenuController {
 	public String addMenuGo(Model model, ServletRequest request) {
 		List<Category> cateList = new ArrayList<>();
 		cateList = service.findAllCategory();
-		model.addAttribute("cateList", cateList);
-		
 		String cateName = request.getParameter("cateName");
+		
+		//	메뉴 조회시 select box에 option값이 계속 카테고리 선택으로 가있는걸 방지하기 위한 로직  
+		for (int i = 0; i < cateList.size(); i++) {
+			if(cateList.get(i).getCateName().equals(cateName)) {
+				cateList.remove(i);
+			};
+		}
+		model.addAttribute("cateList", cateList);
 		List<FoodsCommand> foodList = new ArrayList<>();
 		foodList = service.findAllMenuByCategory(cateName);
 		model.addAttribute("foodList", foodList);
+		model.addAttribute("categoryName", cateName);
 
 		return "admin/addMenu";
 	}
@@ -80,10 +87,10 @@ public class AddMenuController {
 		
 		
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-//		String uploadFolder = "C:\\Hbackend\\eclipse-workspace\\cafe\\src\\main\\webapp\\resources\\img";
+		String uploadFolder = "C:\\Hbackend\\eclipse-workspace\\mischiefCafe\\src\\main\\webapp\\resources\\img";
 		
 		// 집 폴더 경로
-		String uploadFolder = "C:\\Users\\hanta\\Desktop\\mycoding\\StudyJava\\cafe\\src\\main\\webapp\\resources\\img";
+//		String uploadFolder = "C:\\Users\\hanta\\Desktop\\mycoding\\StudyJava\\cafe\\src\\main\\webapp\\resources\\img";
 		/*
 		  파일 업로드시 파일명이 동일한 파일이 이미 존재할 수도 있고 사용자가 
 		  업로드 하는 파일명이 언어 이외의 언어로 되어있을 수 있다. 

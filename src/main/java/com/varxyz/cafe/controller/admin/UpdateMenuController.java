@@ -34,16 +34,19 @@ public class UpdateMenuController {
 	@PostMapping("admin/updateMenu")
 	public String updateMenu(HttpServletRequest request, Model model, HttpSession session,
 			@RequestParam("file") MultipartFile file) {
+		
+		System.out.println(request.getParameter("category"));
+		
+		if(request.getParameter("category") == null) {
+			model.addAttribute("msg", "카테고리가 선택되지 않았습니다!");
+			return "error/error";
+		}
 		FoodsCommand foods = new FoodsCommand();
 		foods.setName(request.getParameter("name"));
 		foods.setPrice(Integer.parseInt(request.getParameter("price")));
 		foods.setStock(Integer.parseInt(request.getParameter("stock")));
 		foods.setCategory(request.getParameter("category"));
 		
-		if(request.getParameter("category") == null) {
-			model.addAttribute("msg", "카테고리가 선택되지 않았습니다!");
-			return "error/error";
-		}
 		
 
 		
@@ -69,10 +72,10 @@ public class UpdateMenuController {
 		
 		
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-//		String uploadFolder = "C:\\Hbackend\\eclipse-workspace\\cafe\\src\\main\\webapp\\resources\\img";
+		String uploadFolder = "C:\\Hbackend\\eclipse-workspace\\mischiefCafe\\src\\main\\webapp\\resources\\img";
 		
 //		집 폴더 경로
-		String uploadFolder = "C:\\Users\\hanta\\Desktop\\mycoding\\StudyJava\\cafe\\src\\main\\webapp\\resources\\img";
+//		String uploadFolder = "C:\\Users\\hanta\\Desktop\\mycoding\\StudyJava\\cafe\\src\\main\\webapp\\resources\\img";
 		
 		/*
 		  파일 업로드시 파일명이 동일한 파일이 이미 존재할 수도 있고 사용자가 

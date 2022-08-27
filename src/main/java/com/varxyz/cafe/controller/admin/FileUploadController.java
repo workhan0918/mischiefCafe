@@ -25,15 +25,15 @@ public class FileUploadController {
 		
 		System.out.println("파일명 : " + fileRealName);
 		System.out.println("용량 크기(byte) : " + size);
-		//서버에 저장할 파일이름 fileextension으로 .jsp이런식의  확장자 명을 구함
+		// 서버에 저장할 파일이름 fileextension으로 .jsp이런식의  확장자명을 만들어준다.
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\Hbackend\\eclipse-workspace\\cafe\\src\\main\\webapp\\resources\\img";
+		String uploadFolder = "C:\\Hbackend\\eclipse-workspace\\mischiefCafe\\src\\main\\webapp\\resources\\img";
 		
 		/*
 		  파일 업로드시 파일명이 동일한 파일이 이미 존재할 수도 있고 사용자가 
 		  업로드 하는 파일명이 언어 이외의 언어로 되어있을 수 있다. 
 		  타인어를 지원하지 않는 환경에서는 정산 동작이 되지 않습니다.(리눅스가 대표적인 예시)
-		  고유한 랜던 문자를 통해 db와 서버에 저장할 파일명을 새롭게 만들어 준다.
+		  고유한 랜덤 문자를 통해 db와 서버에 저장할 파일명을 새롭게 만들어 준다.
 		 */
 		
 		UUID uuid = UUID.randomUUID();

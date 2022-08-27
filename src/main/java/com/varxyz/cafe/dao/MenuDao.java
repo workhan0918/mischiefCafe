@@ -44,7 +44,11 @@ public class MenuDao {
 	// 카테고리 삭제
 	public boolean deleteCategory(String cateName) {
 		String sql = "DELETE FROM Category cateName WHERE cateName = ?";
-		jdbcTemplate.update(sql, cateName);
+		try {
+			jdbcTemplate.update(sql, cateName);			
+		}catch (DataIntegrityViolationException e) {
+			return false;
+		}
 		return true;
 	}
 	
@@ -72,7 +76,7 @@ public class MenuDao {
 		String sql = "DELETE FROM Menu WHERE name = ?";
 		jdbcTemplate.update(sql, name);
 		
-		File file = new File("C:\\Hbackend\\eclipse-workspace\\cafe\\src\\main\\webapp\\resources\\img\\" + imgUrl + ".jpg");
+		File file = new File("C:\\Hbackend\\eclipse-workspace\\mischiefCafe\\src\\main\\webapp\\resources\\img\\" + imgUrl + ".jpg");
 		if(!imgUrl.equals("default_img")) {
 			file.delete();
 		}
@@ -86,7 +90,7 @@ public class MenuDao {
 		jdbcTemplate.update(sql, foods.getName(), foods.getPrice(), foods.getCategory(), 
 				foods.getStock(), foods.getImgUrl(), sessionFoodId.getName());
 		
-		File file = new File("C:\\Hbackend\\eclipse-workspace\\cafe\\src\\main\\webapp\\resources\\img\\" + sessionFoodId.getImgUrl() + ".jpg");
+		File file = new File("C:\\Hbackend\\eclipse-workspace\\mischiefCafe\\src\\main\\webapp\\resources\\img\\" + sessionFoodId.getImgUrl() + ".jpg");
 		if(!sessionFoodId.getImgUrl().equals("default_img") && foods.getImgUrl() != sessionFoodId.getImgUrl()) {
 			file.delete();
 		}

@@ -11,7 +11,7 @@
 </head>
   <body>
     <div id="wrap">
-      <a href="javascript:window.history.back();" class="back">뒤로가기</a>
+      <a href="../admin" class="back">뒤로가기</a>
       <h1 class="addCateTitle">카테고리 추가</h1>
       <p class="addCateSubTitle">현재 추가 되어있는 카테고리 목록</p>
       <form action="deleteCategory" class="addCategoryForm">
