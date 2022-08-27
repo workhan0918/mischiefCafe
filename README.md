@@ -326,17 +326,11 @@
 
 * 카테고리 선택시 그 카테고리에 해당하는 메뉴들이 나오게 됩니다.
 
-
-![image](https://user-images.githubusercontent.com/100820039/187032319-3428f4f3-11d0-4972-9292-cbf80fa60967.png)
-
+![image](https://user-images.githubusercontent.com/100820039/187036318-12bd616b-ee45-42e1-a4d8-ba0c0f7fb4ff.png)
 
 * 메뉴 선택시 나오는 화면입니다.
 
-
-![image](https://user-images.githubusercontent.com/100820039/187036318-12bd616b-ee45-42e1-a4d8-ba0c0f7fb4ff.png)
-
-
-* 수량을 선택 후 장바구니에 담을 수 있도록 List를 전역변수로 선언하여 구현했습니다. List에 담겨져있는 메뉴들은 결제를 할때 session으로 보내집니다.
+수량을 선택 후 장바구니에 담을 수 있도록 List를 전역변수로 선언하여 구현했습니다. List에 담겨져있는 메뉴들은 결제를 할때 session으로 보내집니다.
 
 ![image](https://user-images.githubusercontent.com/100820039/187036348-d6ea94ac-1d42-47ad-95d8-bf4bcd39ba36.png)
 
@@ -367,6 +361,17 @@
 ```
 
 
+장바구니에 담은 메뉴를 결제하기를 누르면 주문확인, 총 결제 가격 확인 후에 결제가 가능하게 구현했습니다.
+
+![image](https://user-images.githubusercontent.com/100820039/187039181-f8f369fb-4bf1-4e32-9664-917b10f981c8.png)
+
+![image](https://user-images.githubusercontent.com/100820039/187039192-a9c60bc1-20a9-48ae-b54d-c86667750425.png)
+
+
+결제 후 처음으로 돌아가거나 장바구니에 메뉴를 담던 도중 처음으로 버튼을 누르면 장바구니 목록이 모두 사라지게 세션삭제를 이용해 구현했습니다.
+
+
+![image](https://user-images.githubusercontent.com/100820039/187039234-e95d55d9-234b-4e85-a59b-091bc7a07a96.png)
 
 
 
