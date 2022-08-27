@@ -23,7 +23,6 @@
     * [카테고리 추가](#카테고리-추가)
     * 카테고리 조회
     * [카테고리 삭제](#카테고리-삭제)
-    * [카테고리 유효성 검사](#카테고리-유효성-검사)
 
   * 메뉴
   
@@ -34,9 +33,10 @@
   
  * 주문
  
-    * 메뉴 선택시 장바구니에 저장
+    * [메뉴 선택시 장바구니에 저장](#주문)
     * 결제
     
+ * [유효성 검사](#유효성-검사)
 # Views
 메인 화면
 
@@ -68,28 +68,6 @@
 ![image](https://user-images.githubusercontent.com/100820039/186043268-632b38f5-28a5-4db5-abbe-c37252f705c4.png)
 ![image](https://user-images.githubusercontent.com/100820039/186043315-879b4f0b-f059-4ed0-9c28-a70f6eed6007.png)
 ![image](https://user-images.githubusercontent.com/100820039/186043333-c68dd728-8764-4818-807a-846c6e84d62d.png)
-
-
-# 카테고리 유효성 검사
-
-  * 중복된 카테고리 추가 시도시 경고창 발생
-  
-  
-   ![image](https://user-images.githubusercontent.com/100820039/186042830-e7a19ae6-5fa2-4327-ad32-85dd139723ca.png)
-   ![image](https://user-images.githubusercontent.com/100820039/186042963-2bc2c64c-7566-4dea-b765-2b55bb90b8f4.png)
-  
-  
-  * 추가한 카테고리에 포함된 메뉴가 생성되어 있는데 카테고리 삭제 시도 시 경고창 발생
-  
-  
-  ![image](https://user-images.githubusercontent.com/100820039/186043492-a4970424-fde8-4fe2-8317-a4e9af6167be.png)
-  ![image](https://user-images.githubusercontent.com/100820039/186043529-85d4e1fe-d13d-4fa7-9819-cdd6faffef54.png)
-  ![image](https://user-images.githubusercontent.com/100820039/186043534-e60f6a2e-182d-4ab5-b1c6-59a87d273601.png)
-  
-  
-  * 카테고리 추가 할 때 빈값으로 추가 시도시 경고창 발생
-  
-  ![image](https://user-images.githubusercontent.com/100820039/186044588-21618508-5d38-40e6-bd50-1da1bdc9f64e.png)
 
 
 
@@ -250,6 +228,8 @@
 
 메뉴 조회 화면에서 체크박스를 체크 후 삭제 버튼을 누르면 메뉴가 삭제되게 구현했습니다.
 
+
+
 ![image](https://user-images.githubusercontent.com/100820039/186056027-308d403d-6351-4e55-974a-68bca43e58c6.png)
 
 ![image](https://user-images.githubusercontent.com/100820039/187025601-3f49e131-89d6-4b34-9229-d014de0eb1e2.png)
@@ -259,12 +239,18 @@
 
 또한 여러개 삭제 하는 기능도 지원 합니다.
 
+체크박스로 클릭한 value값을 list로 받아와 삭제할 수 있도록 구현하였습니다.
+
+
+
 ![image](https://user-images.githubusercontent.com/100820039/187031511-0b139dc0-59f1-4298-91ba-1469aa84fe0d.png)
 
 ![image](https://user-images.githubusercontent.com/100820039/187031526-8cec2ad7-af22-4731-91b2-022ce7d0944d.png)
 
 
 ![image](https://user-images.githubusercontent.com/100820039/187031542-2f4e53c3-5320-4c4c-97dc-4d1ffff6c58f.png)
+
+
 
 삭제 기능 구현 코드 입니다.
 ```Java
@@ -301,6 +287,86 @@
 		return true;
 	}
 ```
+
+
+
+# 유효성 검사
+
+  * 중복된 카테고리 추가 시도시 경고창 발생
+  
+  
+   ![image](https://user-images.githubusercontent.com/100820039/186042830-e7a19ae6-5fa2-4327-ad32-85dd139723ca.png)
+   ![image](https://user-images.githubusercontent.com/100820039/186042963-2bc2c64c-7566-4dea-b765-2b55bb90b8f4.png)
+  
+  
+  * 추가한 카테고리에 포함된 메뉴가 생성되어 있는데 카테고리 삭제 시도 시 경고창 발생
+  
+  
+  ![image](https://user-images.githubusercontent.com/100820039/186043492-a4970424-fde8-4fe2-8317-a4e9af6167be.png)
+  ![image](https://user-images.githubusercontent.com/100820039/186043529-85d4e1fe-d13d-4fa7-9819-cdd6faffef54.png)
+  ![image](https://user-images.githubusercontent.com/100820039/186043534-e60f6a2e-182d-4ab5-b1c6-59a87d273601.png)
+  
+  
+  * 카테고리 추가 할 때 빈값으로 추가 시도시 경고창 발생
+  
+  ![image](https://user-images.githubusercontent.com/100820039/186044588-21618508-5d38-40e6-bd50-1da1bdc9f64e.png)
+
+
+
+# 주문
+
+![image](https://user-images.githubusercontent.com/100820039/187031966-f32c0b96-8be8-47a2-bb54-36a03c171014.png)
+
+
+* 추가된 카테고리들이 보이도록 구현하였습니다.
+
+
+![image](https://user-images.githubusercontent.com/100820039/187032295-2c5e1933-098b-4ba8-8f9e-a4c4fa19d56e.png)
+
+
+* 카테고리 선택시 그 카테고리에 해당하는 메뉴들이 나오게 됩니다.
+
+
+![image](https://user-images.githubusercontent.com/100820039/187032319-3428f4f3-11d0-4972-9292-cbf80fa60967.png)
+
+
+* 메뉴 선택시 나오는 화면입니다.
+
+
+![image](https://user-images.githubusercontent.com/100820039/187036318-12bd616b-ee45-42e1-a4d8-ba0c0f7fb4ff.png)
+
+
+* 수량을 선택 후 장바구니에 담을 수 있도록 List를 전역변수로 선언하여 구현했습니다. List에 담겨져있는 메뉴들은 결제를 할때 session으로 보내집니다.
+
+![image](https://user-images.githubusercontent.com/100820039/187036348-d6ea94ac-1d42-47ad-95d8-bf4bcd39ba36.png)
+
+
+장바구니의 선택한 메뉴들이 담겨져있는 모습
+
+![image](https://user-images.githubusercontent.com/100820039/187036385-078dcac4-be12-43b8-9a83-48d5da579010.png)
+
+
+![image](https://user-images.githubusercontent.com/100820039/187036421-60a1e57f-8309-421c-a023-0934c75c2b92.png)
+
+
+장바구니 구현 코드
+
+```Java
+	// 담기
+	@PostMapping("/cart")
+	public String cartForm(Model model, HttpSession session,
+			@RequestParam("name") String name,@RequestParam("price") int price, @RequestParam("count") int count) {
+		FoodsCommand food = new FoodsCommand();
+		food.setName(name);
+		food.setPrice(price * count);
+		food.setCount(count);
+		list.add(food);
+		session.setAttribute("list", list);
+		return "redirect:/main";
+	}
+```
+
+
 
 
 
