@@ -252,6 +252,57 @@
 
 ![image](https://user-images.githubusercontent.com/100820039/186056027-308d403d-6351-4e55-974a-68bca43e58c6.png)
 
+![image](https://user-images.githubusercontent.com/100820039/187025601-3f49e131-89d6-4b34-9229-d014de0eb1e2.png)
+
+![image](https://user-images.githubusercontent.com/100820039/187025611-3312a2e4-9ea1-4ffa-8f3a-2694759b7080.png)
+
+
+또한 여러개 삭제 하는 기능도 지원 합니다.
+
+![image](https://user-images.githubusercontent.com/100820039/187031511-0b139dc0-59f1-4298-91ba-1469aa84fe0d.png)
+
+![image](https://user-images.githubusercontent.com/100820039/187031526-8cec2ad7-af22-4731-91b2-022ce7d0944d.png)
+
+
+![image](https://user-images.githubusercontent.com/100820039/187031542-2f4e53c3-5320-4c4c-97dc-4d1ffff6c58f.png)
+
+삭제 기능 구현 코드 입니다.
+```Java
+	// Controller
+	@PostMapping("admin/deleteMenu")
+	public String deleteMenuForm(@RequestParam(required = false ,value = "check") ArrayList<String> names, 
+			HttpServletRequest request, Model model) throws IOException {
+		
+		CafeService service = new CafeServiceImpl();
+		
+		// 삭제할 메뉴의 체크박스를 체크하지않고 삭제 버튼을 눌렀을 때
+		if(names == null) {
+			model.addAttribute("msg", "삭제할 메뉴를 선택해주세요");
+			return "error/error";
+		}
+		
+		for( String name : names) {
+			service.deleteMenu(name, service.findImgUrlByName(name).getImgUrl());
+		}
+		model.addAttribute("msg", "삭제를 완료 했습니다.");
+		model.addAttribute("url","addMenu");
+		
+		return "alert/alert_and_page";
+
+	// Dao
+	// 카테고리 삭제
+	public boolean deleteCategory(String cateName) {
+		String sql = "DELETE FROM Category cateName WHERE cateName = ?";
+		try {
+			jdbcTemplate.update(sql, cateName);			
+		}catch (DataIntegrityViolationException e) {
+			return false;
+		}
+		return true;
+	}
+```
+
+
 
 
 
