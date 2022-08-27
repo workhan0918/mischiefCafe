@@ -289,29 +289,6 @@
 
 
 
-# 유효성 검사
-
-  * 중복된 카테고리 추가 시도시 경고창 발생
-  
-  
-   ![image](https://user-images.githubusercontent.com/100820039/186042830-e7a19ae6-5fa2-4327-ad32-85dd139723ca.png)
-   ![image](https://user-images.githubusercontent.com/100820039/186042963-2bc2c64c-7566-4dea-b765-2b55bb90b8f4.png)
-  
-  
-  * 추가한 카테고리에 포함된 메뉴가 생성되어 있는데 카테고리 삭제 시도 시 경고창 발생
-  
-  
-  ![image](https://user-images.githubusercontent.com/100820039/186043492-a4970424-fde8-4fe2-8317-a4e9af6167be.png)
-  ![image](https://user-images.githubusercontent.com/100820039/186043529-85d4e1fe-d13d-4fa7-9819-cdd6faffef54.png)
-  ![image](https://user-images.githubusercontent.com/100820039/186043534-e60f6a2e-182d-4ab5-b1c6-59a87d273601.png)
-  
-  
-  * 카테고리 추가 할 때 빈값으로 추가 시도시 경고창 발생
-  
-  ![image](https://user-images.githubusercontent.com/100820039/186044588-21618508-5d38-40e6-bd50-1da1bdc9f64e.png)
-
-
-
 # 주문
 
 ![image](https://user-images.githubusercontent.com/100820039/187031966-f32c0b96-8be8-47a2-bb54-36a03c171014.png)
@@ -376,4 +353,23 @@
 
 
 
+# 유효성 검사
 
+  * 중복된 카테고리 추가 시도시 경고창 발생
+  
+  
+   ![image](https://user-images.githubusercontent.com/100820039/186042830-e7a19ae6-5fa2-4327-ad32-85dd139723ca.png)
+   ![image](https://user-images.githubusercontent.com/100820039/186042963-2bc2c64c-7566-4dea-b765-2b55bb90b8f4.png)
+  
+  
+  * 추가한 카테고리에 포함된 메뉴가 생성되어 있는데 카테고리 삭제 시도 시 경고창 발생
+  
+  
+  ![image](https://user-images.githubusercontent.com/100820039/186043492-a4970424-fde8-4fe2-8317-a4e9af6167be.png)
+  ![image](https://user-images.githubusercontent.com/100820039/186043529-85d4e1fe-d13d-4fa7-9819-cdd6faffef54.png)
+  ![image](https://user-images.githubusercontent.com/100820039/186043534-e60f6a2e-182d-4ab5-b1c6-59a87d273601.png)
+  
+  
+  * 카테고리 추가 할 때 빈값으로 추가 시도시 경고창 발생
+  
+  ![image](https://user-images.githubusercontent.com/100820039/186044588-21618508-5d38-40e6-bd50-1da1bdc9f64e.png)
