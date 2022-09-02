@@ -12,7 +12,7 @@
   <body>
     <div id="wrap">
       <a href="start" style="left: 30px; background: #99A799;">처음으로</a>
-      <div class="content" style="background: none;">
+      <div class="content" style="background: none; margin-top: 80px;">
           <c:forEach var="category" items="${categorys }">
           	<form method="get" action="orderMenu">
           	<div class="inner"><input style="width:300px; height: 300px; border:none; border-radius: 50%; font-size: 42px; font-family: 'MapoGoldenPier';" type="submit" value="${category.cateName }" name="cateName"></div>

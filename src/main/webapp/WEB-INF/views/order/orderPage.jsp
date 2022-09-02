@@ -28,7 +28,8 @@
     border: none;
     margin-bottom: 30px;
     font-size: 42px;
-    font-family: 'MapoGoldenPier';">뒤로가기</button>
+    font-family: 'MapoGoldenPier';
+    margin-top: 65px;">뒤로가기</button>
       <div class="cart" style="    overflow-y: scroll;
     margin-bottom: 30px;">
         <c:forEach var="item" items="${list }">

@@ -30,9 +30,11 @@ public class AddMenuController {
 	@GetMapping("/admin/addMenu")
 	public String addMenuGo(Model model, ServletRequest request) {
 		List<Category> cateList = new ArrayList<>();
+		List<Category> noRemovecateList = new ArrayList<>();
 		cateList = service.findAllCategory();
+		noRemovecateList = service.findAllCategory();
 		String cateName = request.getParameter("cateName");
-		
+		model.addAttribute("categoryList", noRemovecateList);
 		//	메뉴 조회시 select box에 option값이 계속 카테고리 선택으로 가있는걸 방지하기 위한 로직  
 		for (int i = 0; i < cateList.size(); i++) {
 			if(cateList.get(i).getCateName().equals(cateName)) {
@@ -50,11 +52,21 @@ public class AddMenuController {
 	
 	@PostMapping("/admin/addMenu")
 	public String addMenuForm(HttpServletRequest request, Model model, @RequestParam("file") MultipartFile file) {
+		
+		// 메뉴 등록시 빈값을 입력했을 때 유효성 검사
+		if(request.getParameter("name").trim().isEmpty() || request.getParameter("price").trim().isEmpty() || request.getParameter("stock").trim().isEmpty()) {
+			model.addAttribute("msg", "빈값은 입력하실 수 없습니다.");
+			return "error/error";
+		}
+		
 		Foods food = new Foods();
 		
 		food.setName(request.getParameter("name"));
 		food.setPrice(Integer.parseInt(request.getParameter("price")));
 		
+		
+		
+		// 카테고리를 선택하지 않았을 때 유효성 검사
 		Category category = new Category();
 		if(request.getParameter("category") == null) {
 			model.addAttribute("msg", "카테고리가 선택되지 않았습니다!");
@@ -87,7 +99,7 @@ public class AddMenuController {
 		
 		
 		String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
-		String uploadFolder = "C:\\Hbackend\\eclipse-workspace\\mischiefCafe\\src\\main\\webapp\\resources\\img";
+		String uploadFolder = "C:\\workhan\\mischiefCafe\\src\\main\\webapp\\resources\\img";
 		
 		// 집 폴더 경로
 //		String uploadFolder = "C:\\Users\\hanta\\Desktop\\mycoding\\StudyJava\\cafe\\src\\main\\webapp\\resources\\img";

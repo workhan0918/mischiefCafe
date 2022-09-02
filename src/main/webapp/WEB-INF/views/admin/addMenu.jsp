@@ -16,7 +16,7 @@
       	<div style="margin-left: 37px;">가격 : <input type="text" maxlength="6" name="price" oninput="onlyNumber(this)" class="input_box">원</div>
       	<div style="margin-left: -33px">메뉴 카테고리 : <select name="category" class="category">
       					<option value="unknown" selected disabled>메뉴 선택</option>
-      					<c:forEach var = "item" items="${cateList }">
+      					<c:forEach var = "item" items="${categoryList }">
       						<option value="${item.cateName }">${item.cateName }</option>
       					</c:forEach>
       					</select></div>

@@ -22,6 +22,7 @@ public class DeleteMenuController {
 		
 		CafeService service = new CafeServiceImpl();
 		
+		// 삭제할 메뉴의 체크박스를 체크하지않고 삭제 버튼을 눌렀을 때
 		if(names == null) {
 			model.addAttribute("msg", "삭제할 메뉴를 선택해주세요");
 			return "error/error";

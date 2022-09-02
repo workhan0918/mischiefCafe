@@ -48,6 +48,7 @@ public class MainController {
 		return "order/putMenu";
 	}
 	
+	// 담기
 	@PostMapping("/cart")
 	public String cartForm(Model model, HttpSession session,
 			@RequestParam("name") String name,@RequestParam("price") int price, @RequestParam("count") int count) {
@@ -60,8 +61,14 @@ public class MainController {
 		return "redirect:/main";
 	}
 	
+	// 결제하기
 	@GetMapping("/payment")
 	public String paymentGo(Model model, HttpSession session) {
+		// 사용자가 어떠한 메뉴도 고르지 않고 결제하기 버튼을 눌렀을 때
+		if(session.getAttribute("list") == null) {
+			model.addAttribute("msg","메뉴를 선택해주세요!");
+			return "error/error";
+		}
 		model.addAttribute("list", session.getAttribute("list"));
 		int sumPrice = 0;
 		for (FoodsCommand foodsCommand : list) {
